@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poem</title>
+    <style>
+        h1 {
+        color: red;
+        background: yellow;
+        }
+        div {
+        color: green;
+        font-weight: bold
+        }
+    </style>
+</head>
+
+<body>
+<h1>DocumentObjectModel</h1>
+<div>Roses are red,</div>
+My name is Dave.
+<p></p>
+<div id="mydiv">This poem makes no sense.
+    <span style="color:blue">Microwave!</span>
+</div>
+<hr>
+<div>
+    <button id="sumBtn">Sum</button>
+    <input type="number" id="operand1">
+    <span>+</span>
+    <input type="number" id="operand2">
+    <span>=</span>
+    <span id="result"></span>
+</div>
+<script>
+    let operand1 = document.querySelector('#operand1');
+    let operand2 = document.querySelector('#operand2');
+
+    let sumBtn = document.querySelector('#sumBtn');
+    let result = document.querySelector('#result');
+
+    sumBtn.onclick = function(){
+    let res = +operand1.value + +operand2.value;
+    result.innerText = res;
+    console.log(res);
+    }
+</script>
+
+
+
+
+<!-- Определение пользовательского тега -->
+<my-element> This is a custom tag!</my-element>
+
+<!-- Подключение JavaScript для регистрации пользовательского элемента -->
+<script>
+    // Создаем класс для пользовательского элемента
+    class CustomElement extends HTMLElement {
+        constructor() {
+            super();
+            // Контент пользовательского элемента
+            this.textContent = 'Созданный пользовательский тег';
+        }
+    }
+
+    // Регистрируем пользовательский элемент в качестве нового HTML-тега
+    customElements.define('my-element', CustomElement);
+</script>
+
+
+</body>
+</html>

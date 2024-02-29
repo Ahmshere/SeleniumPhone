@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite1" verbose="1">
+    <listeners>
+        <listener class-name="org.testng.reporters.TestHTMLReporter">
+            <parameter name="output-directory" value="test-output"></parameter>
+            <parameter name="file-name" value="testng_report"></parameter>
+        </listener>
+    </listeners>
+<parameter name="browser" value="firefox"></parameter>
+    <test name="MyFirstTest">
+        <classes>
+            <class name="tests.PhoneBookTest">
+                <methods>
+                    <include name="phoneBookTest"/>
+                    <include name="loginOfAnExistingUserAddContact"/>
+                    <include name="registrationOfAnAlreadyRegisteredUser"/>
+
+                </methods>
+            </class>
+
+            
+        </classes>
+    </test>
+</suite>
